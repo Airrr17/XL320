@@ -1,9 +1,11 @@
-Modified for use with STM32 not involving HalfDuplexHardwareSerial.h
-Verified on STM32 BluePill board
-Serial2: PA2-TX PA3-RX PA1-DIR
-Direction pin is hardcoded in XL320.cpp (four lines) for getJointPosition command only.
-As hardware part you can use a common shcematic based on 74hc241 or provided MAX485.
+Modified for use with STM32 not involving HalfDuplexHardwareSerial.h  
+Verified on STM32 BluePill board  
+Serial2: PA2-TX PA3-RX PA1-DIR  
+Direction pin is hardcoded in XL320.cpp (four lines) for getJointPosition command only.  
+As hardware part you can use a common shcematic based on 74hc241 or provided MAX485.  
+See new example.  
 
+<img src="https://github.com/Airrr17/XL320/blob/master/max485.gif" width="100%" alt="Airrr" title="Airrr">  
 
 
 Dynamixel XL-320
