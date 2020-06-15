@@ -195,14 +195,19 @@ int XL320::getJointPosition(int id){
     unsigned char buffer[255];
     RXsendPacket(id, XL_PRESENT_POSITION, 2); 
     this->stream->flush();
+	      gpio_write_bit(GPIOA, 1, 0);                               //fromServo Airrr
+	
     if(this->readPacket(buffer,255)>0) {
       Packet p(buffer,255);
+	      gpio_write_bit(GPIOA, 1, 1);                               //toServo Airrr
       if(p.isValid() && p.getParameterCount()>=3) {
 	return (p.getParameter(1))|(p.getParameter(2)<<8);
       } else {
+		  gpio_write_bit(GPIOA, 1, 1);                               //toServo Airrr
 	return -1;
       }
     }
+	      gpio_write_bit(GPIOA, 1, 1);                               //toServo Airrr
     return -2;
 }
 
